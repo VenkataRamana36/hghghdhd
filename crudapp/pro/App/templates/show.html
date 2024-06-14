@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Details</title>
+</head>
+<body>
+<table class ="table table-stripped table-bordered table-sm">
+    <thead class="thead-dark" >
+    <tr>
+        <th>Employee Eid</th>
+        <th>Employee Name</th>
+        <th>Employee Email</th>
+        <th>Employee Contact</th>
+        <th>Actions</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for i in employee %}
+    <tr>
+        <td>{{ i.eid }}</td>
+        <td>{{ i.name }}</td>
+        <td>{{ i.email }}</td>
+        <td>{{ i.phone }}</td>
+        <td>
+            <a href = "/edit/{{ i.id }}"><span class="glyphicon glyphicon-pencil">Edit</span></a>
+            <a href ="/delete/{{ i.id }}">Delete</a>
+        </td>
+
+
+    </tr>
+    {% endfor %}
+    </tbody>
+
+</table>
+<br>
+<br>
+
+<center><a href = "/emp" class = "btn btn-primary">Add New Record</a></center>
+</body>
+</html>
